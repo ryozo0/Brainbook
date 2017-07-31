@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>ブログ一覧</h1>
+
+<% @posts.each do |post| %>
+  <p>タイトル:<%= post.title %></p>
+  <p>本文:<%= post.content %></p>
+  <%= link_to "編集する", edit_post_path(post.id) %>
+  <%= link_to "削除する" , post_path(post.id), data: {confirm: '本当に削除していいですか？'}, method: :delete %>
+<% end %>
+
+<%= link_to "新規投稿", new_post_path %>
