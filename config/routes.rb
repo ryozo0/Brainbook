@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :posts do
+    resources :comments
+  end
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

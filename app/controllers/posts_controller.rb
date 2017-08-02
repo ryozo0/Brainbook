@@ -1,9 +1,14 @@
 class PostsController < ApplicationController
-before_action :set_post, only: [:edit, :update, :destroy]
+before_action :set_post, only: [:show, :edit, :update, :destroy]
 before_action :authenticate_user!
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
+  end
+
+  def show
+    @comment = @post.comments.build
+    @comments = @post.comments
   end
 
   def new
