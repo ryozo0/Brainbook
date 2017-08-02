@@ -10,7 +10,23 @@
 </head>
 <body>
 
+  <header>
+    <div class="header-logo">
+      Brainbook
+    </div>
+    <ul>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    </ul>
+
+  </header>
+
 <%= yield %>
+
+  <footer>
+    <p>© 2016-2017 Copyright Brainbook</p>
+  </footer>
+
 
 </body>
 </html>

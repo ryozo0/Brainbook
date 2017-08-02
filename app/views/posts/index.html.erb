@@ -7,6 +7,12 @@
   <p>本文:<%= post.content %></p>
   <%= link_to "編集する", edit_post_path(post.id) %>
   <%= link_to "削除する" , post_path(post.id), data: {confirm: '本当に削除していいですか？'}, method: :delete %>
+  <div class="user-name">
+    <%= post.user.name %>
+  </div>
+  <div class="user-img">
+    <%= profile_img(post.user) %>
+  </div>
 <% end %>
 
 <%= link_to "新規投稿", new_post_path %>

@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
 
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]
 
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+
+  root 'top#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
