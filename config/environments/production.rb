@@ -4,7 +4,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.action_mailer.default_url_options = { host: 'https://powerful-earth-91179.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: '52.198.198.63' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
