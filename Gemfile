@@ -86,5 +86,3 @@ gem 'fog'
 gem 'dotenv-rails'
 
 gem 'unicorn'
-
-gem 'dotenv-rails'
