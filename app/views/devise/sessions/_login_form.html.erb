@@ -1,0 +1,9 @@
+<% content_for(:login_form) do %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'navbar-form navbar-right'}) do |f| %>
+  <div class="form-group">
+    <%= f.email_field :email, placeholder: "メールアドレス", class: 'form-control' %>
+    <%= f.password_field :password, placeholder: "パスワード", class: 'form-control' %>
+  </div>
+  <%= f.submit "ログイン", class:'btn btn-default' %>
+  <% end %>
+<% end %>

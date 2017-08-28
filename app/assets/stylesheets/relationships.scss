@@ -1,3 +1,43 @@
 // Place all the styles related to the Relationships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// .login_form {
+//   float: right;
+//   width: 40%;
+// }
+
+
+.email_field {
+  float: left;
+  width: 100px;
+  margin-right: 80px;
+}
+
+.password_field {
+  float: left;
+  width: 100px;
+  margin-right: 80px;
+}
+
+.login_action {
+  float: left;
+  width: 30px;
+  margin-top: 24px;
+}
+
+.description {
+  float: left;
+  width: 450px;
+  font-size: 30px;
+  padding: 30px;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.signup_form {
+  float: left;
+  width: 450px;
+  padding: 30px;
+  text-align: center;
+  margin-left: 50px;
+}
