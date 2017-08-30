@@ -1,0 +1,19 @@
+<%= render 'devise/sessions/login_form' %>
+
+<div class="container">
+  <div class="row">
+    <section class="main-header">
+      <p class="flash"><%= notice %><%= alert %></p>
+    </section>
+    <div class="col-md-6 col-sm-7 col-xs-12">
+      <div class="description">
+        <p>これはFacebookの類似アプリであり、練習用です。</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-7 col-xs-12">
+      <div class="signup_form">
+        <%= render 'devise/registrations/signup_form' %>
+      </div>
+    </div>
+  </div>
+</div>

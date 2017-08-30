@@ -15,16 +15,18 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  devise_scope :user do
-    authenticated :user do
-      root to: 'posts#index', as: :authenticated_root
-    end
-    unauthenticated :user do
-      root to: 'devise/sessions#new', as: :unauthenticated_root
-    end
-  end
+  # devise_scope :user do
+  #   authenticated :user do
+  #     root to: 'posts#index', as: :authenticated_root
+  #   end
+  #   unauthenticated :user do
+  #     root to: 'devise/sessions#new', as: :unauthenticated_root
+  #   end
+  # end
 
-  root to: 'devise/sessions#new'
+  devise_scope :user do
+      root :to => "devise/sessions#new"
+  end
 
   resources :users, only: [:index, :show]
 
