@@ -10,36 +10,39 @@
   <body>
 
     <header>
-      <nav class="navbar bg-primary">
+      <nav class="navbar bg-primary navbar-fixed-top">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand text-success" href="#">Brainbook</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar btn-default"></span>
+            <span class="icon-bar btn-default"></span>
+            <span class="icon-bar btn-default"></span>
+          </button>
+          <div class="navbar-brand">
+            <%= link_to "Brainbook", root_path, class: "bg-primary text-white" %>
           </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
+          <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <% if user_signed_in? %>
+              <li><%= link_to '投稿する', new_post_path, class: "bg-primary text-white" %></li>
+              <li><%= link_to 'ユーザー一覧', users_path, class: "bg-primary text-white" %></li>
+              <li><%= link_to "メッセージ", conversations_path, class: "bg-primary text-white" %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "bg-primary text-white" %></li>
+            <% end %>
+          </ul>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <% if content_for? :login_form %>
             <%= yield :login_form %>
             <% end %>
           </div>
+
         </div>
       </nav>
 
-      <ul class="top_menu clearfix">
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete if user_signed_in? %></li>
-        <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
-        <li><%= link_to "メッセージ", conversations_path if user_signed_in? %></li>
-      </ul>
     </header>
 
     <%= yield %>
 
-    <footer class="bg-primary text-white">
+    <footer class="bg-primary">
       <p>© 2016-2017 Copyright Brainbook</p>
     </footer>
 

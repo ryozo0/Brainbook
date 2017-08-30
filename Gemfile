@@ -86,4 +86,5 @@ gem 'dotenv-rails'
 
 gem 'unicorn'
 
+gem 'devise-i18n-views'
 # gem 'less-rails'

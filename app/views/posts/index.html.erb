@@ -1,22 +1,26 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <p id="notice"><%= notice %></p>
-    <h1>ブログ一覧</h1>
-    <%= link_to "ブログを作成する", new_post_path, class: 'btn btn-default' %>
-    <% @posts.each do |post| %>
-      <div class="row">
-        <%= link_to post_path(post) do %>
-          <h4><strong><%= post.title %></strong></h4>
-        <% end %>
-        <%= link_to "編集する", edit_post_path(post.id) %>
-        <%= link_to "削除する" , post_path(post.id), data: {confirm: '本当に削除していいですか？'}, method: :delete %>
-        <div class="user-name">
-          <%= post.user.name %>
+  <div class="row">
+    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+      <p id="notice"><%= notice %></p>
+      <h1>最近の動向は？</h1>
+      <p><%= link_to "投稿する", new_post_path, class: 'btn btn-default' %></p>
+      <% @posts.each do |post| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= link_to post_path(post) do %>
+              <h4 class="panel-title"><strong><%= post.title %></strong></h4>
+            <% end %>
+            <%= link_to "編集する", edit_post_path(post.id) %>
+            <%= link_to "削除する" , post_path(post.id), data: {confirm: '本当に削除していいですか？'}, method: :delete %>
+            <div class="user-name">
+              <%= post.user.name %>
+            </div>
+          </div>
+          <div class="user-img">
+            <%= profile_img(post.user) %>
+          </div>
         </div>
-        <div class="user-img">
-          <%= profile_img(post.user) %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

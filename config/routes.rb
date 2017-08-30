@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     end
   end
 
+  root to: 'devise/sessions#new'
+
   resources :users, only: [:index, :show]
 
   resources :relationships, only: [:create, :destroy]

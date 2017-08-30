@@ -9,9 +9,15 @@
 100.times do |n|
   email = Faker::Internet.email
   password = "password"
+  uid = SecureRandom.hex(8)
+  provider = SecureRandom.hex(8)
+  name = SecureRandom.hex(5)
   User.create(email: email,
+              name: name,
               password: password,
               password_confirmation: password,
+              uid: uid,
+              provider: provider,
               )
 end
 

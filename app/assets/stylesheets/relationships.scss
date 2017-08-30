@@ -7,24 +7,6 @@
 // }
 
 
-.email_field {
-  float: left;
-  width: 100px;
-  margin-right: 80px;
-}
-
-.password_field {
-  float: left;
-  width: 100px;
-  margin-right: 80px;
-}
-
-.login_action {
-  float: left;
-  width: 30px;
-  margin-top: 24px;
-}
-
 .description {
   float: left;
   width: 450px;
@@ -40,4 +22,32 @@
   padding: 30px;
   text-align: center;
   margin-left: 50px;
+}
+
+.user-btn {
+  list-style: none;
+  text-decoration: none;
+}
+
+.btn-icon {
+  list-style: none;
+}
+
+.btn-icon a{
+  text-decoration: none;
+}
+
+.user-info {
+  margin-top: 20px;
+}
+
+.field {
+  margin: 15px 0;
+}
+
+.file-select {
+
+
+  margin-top: 15px;
+
 }

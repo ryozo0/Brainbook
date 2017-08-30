@@ -7,12 +7,6 @@ header {
   // margin: 0 auto;
 }
 
-.header-logo {
-  font-size: 20px;
-  float: left;
-  color: white;
-  padding: 15px;
-}
 
 header ul {
   margin: 0 auto;
@@ -20,17 +14,7 @@ header ul {
 
 }
 
-header li  a {
-  float: right;
-  padding: 15px;
-  color: white;
-}
 
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 
 
 
@@ -55,4 +39,5 @@ body {
   width: 100%;
   text-align: center;
   margin: 0 auto;
+  padding: 70px 0;
 }
